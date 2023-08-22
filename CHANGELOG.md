@@ -1,4 +1,8 @@
-# 0.1.0 (2023-08-22)
+## [0.1.1](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.1.0...v0.1.1) (2023-08-22)
+
+
+
+# [0.1.0](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/81f21c7d1d498da15ad91a359d440197c4af8f8e...v0.1.0) (2023-08-22)
 
 
 ### Bug Fixes
