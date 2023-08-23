@@ -12,17 +12,9 @@ copy_s3:
 	done
 
 .PHONY: release
-release: check_release_version check_existing_version copy_s3
+release: check_release_version copy_s3
 
 check_release_version:
 ifndef RELEASE_VERSION
 	$(error RELEASE_VERSION is not set or empty for release)
 endif
-
-check_existing_version:
-	@exists_count=$$(aws s3 ls $(S3_BUCKET_PATH) | grep -c $(RELEASE_VERSION)) ; \
-	echo "Number of matching versions in S3: $$exists_count" ; \
-	if [ "$$exists_count" -ne "0" ]; then \
-		echo "A release with version $(RELEASE_VERSION) already exists in S3" ; \
-		exit 1 ; \
-	fi
