@@ -1,3 +1,7 @@
+## [0.14.9](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.8...v0.14.9) (2023-08-23)
+
+
+
 ## [0.14.8](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.7...v0.14.8) (2023-08-23)
 
 
@@ -21,15 +25,6 @@
 ### Bug Fixes
 
 * **Make:** a different approach to overwrite prevention ([9f8ea50](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/9f8ea509f6a7ca76ba8f3180d6cf69bdff0a4d4e))
-
-
-
-## [0.14.4](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.3...v0.14.4) (2023-08-23)
-
-
-### Bug Fixes
-
-* **Make:** more descriptive error / debug ([783955c](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/783955c7093283996a9725ef99f245bfed0d8a50))
 
 
 

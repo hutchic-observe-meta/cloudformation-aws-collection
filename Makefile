@@ -1,4 +1,4 @@
-S3_CP_ARGS=aws s3 cp --acl public-read
+S3_CP_ARGS=aws s3 cp
 RELEASE_VERSION?=
 BUCKET_NAME=observe-chutchinson
 
