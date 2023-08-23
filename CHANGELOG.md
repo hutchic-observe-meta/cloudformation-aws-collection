@@ -1,3 +1,12 @@
+## [0.14.2](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.1...v0.14.2) (2023-08-23)
+
+
+### Bug Fixes
+
+* **terraform:** allow the github assumed role to head the s3 bucket ([a311108](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/a311108eda91be158ce512fabcc5e27f7fda9bcc))
+
+
+
 ## [0.14.1](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.0...v0.14.1) (2023-08-23)
 
 
@@ -38,15 +47,6 @@
 ### Bug Fixes
 
 * make sure lambda log group is successfully deleted on rollback ([#32](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/issues/32)) ([e5b8b99](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/e5b8b99ace7e3b1d8507d5953f3fdf8e6d6e0aeb)), closes [#21](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/issues/21) [#21](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/issues/21)
-
-
-
-# [0.11.0](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.10.0...v0.11.0) (2023-07-28)
-
-
-### Bug Fixes
-
-* **default-services:** remove services from the default list refs: OB-21129 ([#27](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/issues/27)) ([9856ea7](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/9856ea7f9bea88f6c96f9f778da5d3917aaccb96))
 
 
 
