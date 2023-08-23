@@ -1,3 +1,12 @@
+## [0.14.10](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.9...v0.14.10) (2023-08-23)
+
+
+### Bug Fixes
+
+* **terraform:** fix terraform to include putobjectacl ([1105e93](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/1105e93e2e656fc80f0e48edb8f65a4980806702))
+
+
+
 ## [0.14.9](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.8...v0.14.9) (2023-08-23)
 
 
@@ -16,15 +25,6 @@
 
 
 ## [0.14.6](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.5...v0.14.6) (2023-08-23)
-
-
-
-## [0.14.5](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.4...v0.14.5) (2023-08-23)
-
-
-### Bug Fixes
-
-* **Make:** a different approach to overwrite prevention ([9f8ea50](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/9f8ea509f6a7ca76ba8f3180d6cf69bdff0a4d4e))
 
 
 
