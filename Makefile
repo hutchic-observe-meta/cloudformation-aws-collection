@@ -20,18 +20,10 @@ ifndef RELEASE_VERSION
 endif
 
 check_existing_version:
-	@for file in templates/*.yaml ; do \
-		object_key="cloudformation/$$(basename $$file .yaml)-$(RELEASE_VERSION).yaml" ; \
-		cmd="aws s3api head-object --bucket $(BUCKET_NAME) --key $$object_key" ; \
-		echo "Command used: $$cmd" ; \
-		status=$$($$cmd 2>&1 ; echo $$?); \
-		if [ "$$status" = "0" ]; then \
-			echo "A release with version $(RELEASE_VERSION) already exists in S3 for file $$file" ; \
-			exit 1 ; \
-		elif [ "$$status" != "404" ]; then \
-			echo "Error output: $$status" ; \
-			echo "API or credential error while checking existence in S3 for file $$file" ; \
-			exit 1 ; \
-		fi ; \
-	done
-
+	@cmd="aws s3 ls $(S3_BUCKET_PATH) | grep $(RELEASE_VERSION) | wc -l" ; \
+	echo "Command used: $$cmd" ; \
+	exists_count=$$($$cmd) ; \
+	if [ "$$exists_count" -ne "0" ]; then \
+		echo "A release with version $(RELEASE_VERSION) already exists in S3" ; \
+		exit 1 ; \
+	fi
