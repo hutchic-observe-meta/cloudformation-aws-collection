@@ -1,3 +1,12 @@
+## [0.14.7](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.6...v0.14.7) (2023-08-23)
+
+
+### Bug Fixes
+
+* **infra:** move to a policy document instead of an inline policy ([84045bc](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/84045bc54e825c8a910af9b3717be8a99819b3fc))
+
+
+
 ## [0.14.6](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.5...v0.14.6) (2023-08-23)
 
 
@@ -21,15 +30,6 @@
 
 
 ## [0.14.3](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.2...v0.14.3) (2023-08-23)
-
-
-
-## [0.14.2](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/compare/v0.14.1...v0.14.2) (2023-08-23)
-
-
-### Bug Fixes
-
-* **terraform:** allow the github assumed role to head the s3 bucket ([a311108](https://github.com/hutchic-observe-meta/cloudformation-aws-collection/commit/a311108eda91be158ce512fabcc5e27f7fda9bcc))
 
 
 
