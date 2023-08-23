@@ -20,9 +20,8 @@ ifndef RELEASE_VERSION
 endif
 
 check_existing_version:
-	@cmd="aws s3 ls $(S3_BUCKET_PATH) | grep $(RELEASE_VERSION) | wc -l" ; \
-	echo "Command used: $$cmd" ; \
-	exists_count=$$($$cmd) ; \
+	@exists_count=$$(aws s3 ls $(S3_BUCKET_PATH) | grep -c $(RELEASE_VERSION)) ; \
+	echo "Number of matching versions in S3: $$exists_count" ; \
 	if [ "$$exists_count" -ne "0" ]; then \
 		echo "A release with version $(RELEASE_VERSION) already exists in S3" ; \
 		exit 1 ; \

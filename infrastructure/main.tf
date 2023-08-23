@@ -57,15 +57,16 @@ data "aws_iam_policy_document" "bucket_write" {
   }
 }
 
+resource "aws_iam_policy" "github_actions_s3_write" {
+  name        = "GitHubActionsS3WritePolicy"
+  description = "Allows GitHub Actions to write to the S3 bucket"
+  policy      = data.aws_iam_policy_document.bucket_write.json
+}
+
 resource "aws_iam_role" "github_actions_release" {
   name = "${local.repository}-gha-release"
 
-  inline_policy {
-    name   = "github-actions-s3-write"
-    policy = data.aws_iam_policy_document.bucket_write.json
-  }
-
-  managed_policy_arns = []
+  managed_policy_arns = [aws_iam_policy.github_actions_s3_write.arn]
   assume_role_policy  = data.aws_iam_policy_document.github_actions_assume_role.json
 
   tags = {
