@@ -43,6 +43,7 @@ data "aws_iam_policy_document" "bucket_write" {
     actions = [
       "s3:GetObject",
       "s3:PutObject",
+      "s3:HeadObject",
     ]
 
     resources = [
