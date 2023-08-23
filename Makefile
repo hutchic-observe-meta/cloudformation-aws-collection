@@ -21,14 +21,17 @@ endif
 
 check_existing_version:
 	@for file in templates/*.yaml ; do \
-		status=$$(aws s3api head-object --bucket $(BUCKET_NAME) --key cloudformation/$$(basename $$file .yaml)-$(RELEASE_VERSION).yaml >/dev/null 2>&1 ; echo $$?); \
+		object_key="cloudformation/$$(basename $$file .yaml)-$(RELEASE_VERSION).yaml" ; \
+		cmd="aws s3api head-object --bucket $(BUCKET_NAME) --key $$object_key" ; \
+		echo "Command used: $$cmd" ; \
+		status=$$($$cmd 2>&1 ; echo $$?); \
 		if [ "$$status" = "0" ]; then \
-			echo "Command used: aws s3api head-object --bucket $(BUCKET_NAME) --key cloudformation/$$(basename $$file .yaml)-$(RELEASE_VERSION).yaml"; \
-			echo "A release with version $(RELEASE_VERSION) of file $$file already exists in S3"; \
-			exit 1; \
-		elif [ "$$status" != "255" ] && [ "$$status" != "0" ]; then \
-			echo "Command used: aws s3api head-object --bucket $(BUCKET_NAME) --key cloudformation/$$(basename $$file .yaml)-$(RELEASE_VERSION).yaml"; \
-			echo "API or credential error while checking existence in S3 for file $$file"; \
-			exit 1; \
-		fi \
+			echo "A release with version $(RELEASE_VERSION) already exists in S3 for file $$file" ; \
+			exit 1 ; \
+		elif [ "$$status" != "404" ]; then \
+			echo "Error output: $$status" ; \
+			echo "API or credential error while checking existence in S3 for file $$file" ; \
+			exit 1 ; \
+		fi ; \
 	done
+
