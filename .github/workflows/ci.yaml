@@ -9,26 +9,7 @@ on:
       - main
 
 jobs:
-  permission_check:
-    runs-on: ubuntu-latest
-    outputs:
-      can-write: ${{ steps.check.outputs.can-write }}
-    env:
-      OBSERVE_CUSTOMER: ${{ secrets.OBSERVE_CUSTOMER }}
-
-    steps:
-    - id: check
-      run: |
-        # If the OBSERVE_CUSTOMER secret is MIA we can't run tests
-        if [[ -z "$OBSERVE_CUSTOMER" ]]; then
-            echo "can-write=false" >> $GITHUB_OUTPUT
-        else
-            echo "can-write=true" >> $GITHUB_OUTPUT
-        fi
-
   run-aws-test-kitchen:
-    needs: [permission_check]
-    if: needs.permission_check.outputs.can-write == 'true'
     uses: hutchic-observe-meta/aws-test-kitchen-public/.github/workflows/ci.yml@main
     with:
       test_type: cloudformation
